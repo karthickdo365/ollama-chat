@@ -1,15 +1,15 @@
 {
-  "routes": [
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "rewrites": [
     {
-      "src": "/api/(.*)",
-      "dest": "https://glady-muggiest-jessia.ngrok-free.dev/api/$1",
-      "headers": {
-        "ngrok-skip-browser-warning": "true"
-      }
+      "source": "/api/:path*",
+      "destination": "https://glady-muggiest-jessia.ngrok-free.dev/api/:path*"
     },
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/:path*",
+      "destination": "/index.html"
     }
   ]
 }
